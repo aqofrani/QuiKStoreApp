@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Get weather base on location
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button ion-button size="block" (click)="getWeather()">Get weather information</ion-button>
+  <div *ngIf="!weather" id="map_canvas"></div>
+  <ul *ngIf="weather">
+      <li>Style: {{weather.Style}}</li>
+      <li>Description: {{weather.Description}}</li>
+      <li>CityName: {{weather.CityName}}</li>
+      <li>Temperature: {{weather.Temperature}}</li>
+      <li>Pressure: {{weather.Pressure}}</li>
+      <li>Humidity: {{weather.Humidity}}</li>
+      <li>Minimum Temperature: {{weather.MinimumTemperature}}</li>
+      <li>Maximum Temperature: {{weather.MaximumTemperature}}</li>
+  </ul>
+</ion-content>
